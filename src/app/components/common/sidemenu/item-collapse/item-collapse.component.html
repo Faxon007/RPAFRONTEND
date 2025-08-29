@@ -1,0 +1,88 @@
+<li class="relative sidenav-item" id="sidenavReportAdmin" *ngIf="administrativeReports">
+  <!-- * [class]="sideMenuStore.sidemenuValue.show ? 'w-full' : 'w-[60px]'"  -->
+  <a class="item h-[60px] min-h-[60px] max-h-[60px] relative overflow-hidden flex flex-row items-center px-[1rem] mb-2 rounded-full gap-2 hover:bg-divider cursor-pointer w-[60px]"
+    data-bs-toggle="show" data-bs-target="#showReportAdmin" aria-expanded="true" aria-controls="showReportAdmin"
+    [class.selected]="isSelected(reportAdminNav)">
+    <!-- *[class]="sideMenuStore.sidemenuValue.show ? '' : 'w-full'" -->
+    <ion-icon class="icon w-full" [name]="
+  				isSelected(reportAdminNav)
+  					? 'speedometer'
+  					: 'speedometer-outline'
+  			"></ion-icon>
+    <!-- <div class="flex flex-row items-center justify-between w-full" [class]="
+  				sideMenuStore.sidemenuValue.show
+  					? 'ease-in-out duration-1000 transition-all'
+  					: 'hidden ease-out duration-1000'
+  			">
+      <span class="text-[13px]">Reportes administrativos</span>
+      <ion-icon class="icon-chevron transition-all duration-300"
+        [name]="isOpen ? 'chevron-up-outline' : 'chevron-down-outline'"></ion-icon>
+    </div> -->
+  </a>
+  <!-- <ul [class.hidden]="!sideMenuStore.sidemenuValue.show"
+    class="relative accordion-show show bg-medium-hover p-2 select-none" id="showReportAdmin"
+    aria-labelledby="sidenavReportAdmin" data-bs-parent="#sidenav">
+    <li class="relative" *ngFor="let nav of reportAdminNav">
+      <a class="item relative flex flex-row items-center h-14 px-[1.1rem] mb-2 rounded-full hover:bg-divider cursor-pointer transition duration-100 ease-in-out"
+        lines="none" detail="false" (click)="selectPage(nav)" [class.selected]="isSelected(nav?.url)">
+        <span class="text-[13px] ml-[1rem]">{{ nav.title }}</span>
+      </a>
+    </li>
+  </ul> -->
+  <ul *ngIf="sideMenuStore.sidemenuValue.show" class="submenu bg-none z-50">
+    <div class="flex flex-col w-[300px] bg-light p-4 rounded-sm shadow-sm">
+      <h2 class="font-bold text-base text-primary ml-3 mb-4">
+        Reportes administrativos
+      </h2>
+      <a *ngFor="let nav of reportAdminNav"
+        class="item relative flex flex-row items-center h-14 px-[1.1rem] mb-2 rounded-full hover:bg-divider cursor-pointer transition duration-100 ease-in-out"
+        lines="none" detail="false" (click)="selectPage(nav)" [class.selected]="isSelected(nav?.url)">
+        <span class="text-sm ml-[1rem]">{{ nav.title }}</span>
+      </a>
+    </div>
+  </ul>
+</li>
+<!-- *gestion administrativa -->
+<li class="relative sidenav-item" id="sidenavManagement" *ngIf="management">
+  <a class="item h-[60px] min-h-[60px] max-h-[60px] relative overflow-hidden flex flex-row items-center px-[1rem] mb-2 rounded-full gap-2 hover:bg-divider cursor-pointer w-[60px]"
+    data-bs-toggle="show" data-bs-target="#showManagement" aria-expanded="true" aria-controls="showManagement"
+    [class.selected]="isSelected(managementNav)">
+    <!-- * [class]="sideMenuStore.sidemenuValue.show ? '' : 'w-full'" -->
+    <ion-icon class="icon w-full" [name]="isSelected(managementNav) ? 'settings' : 'settings-outline'"></ion-icon>
+    <!-- <div class="flex flex-row items-center justify-between w-full" [class]="
+  				sideMenuStore.sidemenuValue.show
+  					? 'ease-in-out duration-1000 transition-all'
+  					: 'hidden ease-out duration-1000'
+  			">
+      <span class="text-[13px]">Gestión administrativa</span>
+      <ion-icon class="icon-chevron transition-all duration-300"
+        [name]="isOpen ? 'chevron-up-outline' : 'chevron-down-outline'"></ion-icon>
+    </div> -->
+  </a>
+  <!-- <ul [class.hidden]="!sideMenuStore.sidemenuValue.show"
+    class="relative accordion-show show bg-medium-hover p-2 select-none" id="showManagement"
+    aria-labelledby="sidenavManagement" data-bs-parent="#sidenav">
+    <li class="relative" *ngFor="let nav of managementNav">
+      <a class="item relative flex flex-row items-center h-14 px-[1.1rem] mb-2 rounded-full hover:bg-divider cursor-pointer transition duration-100 ease-in-out"
+        lines="none" detail="false" (click)="selectPage(nav)" [class.selected]="isSelected(nav?.url)">
+        <span class="text-[13px] ml-[1rem]">{{ nav.title }}</span>
+      </a>
+    </li>
+  </ul> -->
+  <ul *ngIf="sideMenuStore.sidemenuValue.show" class="submenu bg-none z-50">
+    <div class="flex flex-col w-[300px] bg-light p-4 rounded-sm shadow-sm">
+      <h2 class="font-bold text-base text-primary ml-3 mb-4">
+        Gestión administrativa
+      </h2>
+      <a *ngFor="let nav of managementNav"
+        class="item relative flex flex-row items-center h-14 px-[1.1rem] mb-2 rounded-full hover:bg-divider cursor-pointer transition duration-100 ease-in-out"
+        lines="none" detail="false" (click)="selectPage(nav)" [class.selected]="isSelected(nav?.url)">
+        <span class="text-[13px] ml-[1rem]">{{ nav.title }}</span>
+      </a>
+    </div>
+  </ul>
+</li>
+<app-profile-dropdown class="flex"></app-profile-dropdown>
+
+<!-- <app-profile-dropdown class="flex sm:hidden"></app-profile-dropdown>
+<h1 class="text-dark">holaa</h1> -->

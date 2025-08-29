@@ -1,0 +1,7 @@
+{
+	"name": "claro-oym-portal-frontend",
+	"integrations": {
+		"capacitor": {}
+	},
+	"type": "angular"
+}

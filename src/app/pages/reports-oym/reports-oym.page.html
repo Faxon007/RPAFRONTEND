@@ -1,0 +1,23 @@
+<div class="w-full">
+  <app-header class="" title="Reportes O&M3"></app-header>
+  <div
+    class="min-h-screen flex-col h-screen px-5 md:px-10 pb-11 mt-[50px] sm:mt-0 w-full flex claro-oym-scroll overflow-x-hidden overflow-y-auto flex-1 scroll-smooth">
+    <section class="w-full h-fit flex flex-col">
+      <div class="flex w-[100%] items-center flex-col">
+        <div class="w-full flex items-start">
+          <app-search class="mr-10 w-[340px]" placeholder="Buscar" [(value)]="search"></app-search>
+          <!--  -->
+        </div>
+        <div class="w-full mt-8 mb-10">
+          <div class="mb-14">
+            <ng-container *ngFor="let item of reports">
+              <app-list-item (clickFavorite)="onClickFavorite($event)" class="w-full" [search]="search"
+                (onClick)="onClick($event)" [items]="item.reports" [title]="item?.name"
+                [length]="item.reports.length || 0"></app-list-item>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
