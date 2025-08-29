@@ -20,8 +20,16 @@ export const pages: IPage[] = [
 	{
 		title: 'RPAs',
 		url: '/robots',
-		icon: 'person',
+		icon: 'hardware-chip',
 		path: 'robots',
+		isOpen: false,
+		children: [],
+	},
+	{
+		title: 'Executions',
+		url: '/executions',
+		icon: 'calendar',
+		path: 'execution',
 		isOpen: false,
 		children: [],
 	}

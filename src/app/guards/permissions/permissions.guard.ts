@@ -53,6 +53,14 @@ export class PermissionsGuard implements CanActivateChild {
 
 			if (access) return true;
 		}
+		if (url[0] === 'executions') {
+			const access =
+				url.length !== 2
+					? true
+					: permissions?.rpa;
+
+			if (access) return true;
+		}
 
 
 		// Permiso para management

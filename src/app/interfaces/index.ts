@@ -118,3 +118,11 @@ export interface IRobot {
 	script?:string
 	status?: string
 }
+
+export interface IExecution {
+	id?: number
+	name: string
+	description?: string
+	script?:string
+	status?: string
+}

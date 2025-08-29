@@ -17,6 +17,13 @@ const routes: Routes = [
 					),
 			},
 			{
+				path: 'executions',
+				loadChildren: () =>
+					import('../executions/execution.module').then(
+						(m) => m.ExecutionsPageModule
+					),
+			},
+			{
 				path: 'oym-reports',
 				loadChildren: () =>
 					import('../reports-oym/reports-oym.module').then(
